@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <shell:WindowChrome.WindowChrome>
-        <shell:WindowChrome
-
+        <shell:WindowChrome 
+            
             ResizeBorderThickness="5"
 
             CaptionHeight="20"
@@ -19,14 +19,31 @@
             GlassFrameThickness="1">
         </shell:WindowChrome>
     </shell:WindowChrome.WindowChrome>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="75*"/>
-        </Grid.RowDefinitions>
-        <DockPanel Height="25" Background="#1a508b">
-            <TextBlock Text="Title" Foreground="White" Margin="5" FontFamily="Arial" FontSize="15"/>
-            <Button Content="✕" HorizontalAlignment="Right"  Width="25" Height="25" Click="ExitButton_Click" Background="{x:Null}"  WindowChrome.IsHitTestVisibleInChrome="True" Foreground="White" BorderBrush="{x:Null}" />
-        </DockPanel>
-    </Grid>
+    <Border BorderThickness="0">
+        <Border.Style>
+            <Style TargetType="{x:Type Border}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                 Value="Maximized">
+                        <Setter Property="Margin" Value="7"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                 Value="Normal">
+                        <Setter Property="Margin" Value="0"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="75*"/>
+            </Grid.RowDefinitions>
+            <DockPanel Height="25" Background="#1a508b">
+                <TextBlock Text="Title" Foreground="White" Margin="5" FontFamily="Arial" FontSize="15"/>
+                <Button Content="✕" HorizontalAlignment="Right"  Width="25" Height="25" Click="ExitButton_Click" Background="{x:Null}"  WindowChrome.IsHitTestVisibleInChrome="True" Foreground="White" BorderBrush="{x:Null}" />
+            </DockPanel>
+        </Grid>
+    </Border>
 </Window>
