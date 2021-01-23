@@ -29,5 +29,10 @@ namespace WPF_Chrome_Window_Example
         {
             Close();
         }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }

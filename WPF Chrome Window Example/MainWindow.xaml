@@ -42,7 +42,10 @@
             </Grid.RowDefinitions>
             <DockPanel Height="25" Background="#1a508b">
                 <TextBlock Text="Title" Foreground="White" Margin="5" FontFamily="Arial" FontSize="15"/>
-                <Button Content="✕" HorizontalAlignment="Right"  Width="25" Height="25" Click="ExitButton_Click" Background="{x:Null}"  WindowChrome.IsHitTestVisibleInChrome="True" Foreground="White" BorderBrush="{x:Null}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Button Content="🗕" VerticalContentAlignment="Top" Width="25" Height="25" Click="MinimizeButton_Click" Background="{x:Null}"  WindowChrome.IsHitTestVisibleInChrome="True" Foreground="White" BorderBrush="{x:Null}" />
+                <Button Content="✕" Width="25" Height="25" Click="ExitButton_Click" Background="{x:Null}"  WindowChrome.IsHitTestVisibleInChrome="True" Foreground="White" BorderBrush="{x:Null}" />
+                </StackPanel>
             </DockPanel>
         </Grid>
     </Border>
