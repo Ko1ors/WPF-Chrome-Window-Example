@@ -24,5 +24,10 @@ namespace WPF_Chrome_Window_Example
         {
             InitializeComponent();
         }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
